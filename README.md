@@ -1,0 +1,8 @@
+The goal of this project is to be able to better understand positions in modern NBA Basketball with the help of non-negative matrix factorization (NMF).
+
+Brief Explanation of NMF:
+By taking an input matrix X (with non-negative entries), we can factor it into two submatrices: X=AS. We can understand this factorization as follows. If each column in X represents an entry in a data set (for simplicity's sake, a compound signal), we can take our matrix which is then full of compound signals and get back matrices A (columns form a set of basis signals for the columns of X) and S (columns represent the linear combinations to form the input signals out of the basis signals).
+
+This connects to basketball because if we give an NMF model an input matrix where each input signal is a player, we can get back a set of basis signals which represent roles or positions in terms of superlative play styles. We then can see how each player is made up of these basis roles. In our initial trial of this idea, we took data from the 2021-2022 NBA season as our input matrix. Our NMF model when run with an internal dimension of 3 gave us roles which correlated to shooters (high FGA, high 3PA, high 3P%, low defensive stats), big men (high OREB, high DREB, high FG%), and facilitators (high AST). This breakdown was very intuitive and categorized players with the combinations of roles which we initially would've guessed for all of them, showing that it was an effective factorization.
+
+Our goal is to follow up this experiment by looking at other seasons of data, compounding multiple seasons of data, and perhaps changing the stats which we measure and feed the model.
